@@ -1,0 +1,148 @@
+.btn-mobile { 
+
+    float: right;
+    width: 35px;
+    height: 35px;
+    background-color: #5ad3d8;
+    margin-top: 16px;
+    text-align: center;
+    border-radius: 50px;
+
+}
+
+.btn-mobile a {
+
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 38px;
+
+}
+
+.modal-full {
+   display: none;
+   box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
+}
+
+.modal-full:target {
+
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.modal-full .content-menu {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index:99;
+  width: 0;
+  height: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: 1s grow ease forwards;
+  text-align: center;
+
+}
+
+.lista-nav  {
+  list-style-type: none;
+}
+
+.lista-nav a {
+  
+  font-size: 36px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.5s;
+
+}
+
+.lista-nav a:hover { color: #5ad3d8; }
+
+.lista-item {
+  height: 100%;
+  overflow: hidden;
+}
+
+.lista-nav li {
+  padding: 15px 0;
+  transform: translateY(200px);
+  opacity: 0;
+  animation: 2s slideUp ease forwards .5s;
+  position: relative;
+}
+
+.lista-nav li::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  bottom: 10px;
+  background: #5ad3d8; 
+  transition: all .5s ease;
+}
+
+.lista-nav li:hover:before {
+
+      width: 100%;
+}
+
+.modal-full p {
+  padding: 50px;
+  opacity: 0;
+  animation: 1s fadeIn ease forwards 1s;
+}
+
+.modal-full .fechar::after {
+
+  right: 2%;
+  top: 4%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  font-size: 32px;
+  align-items: center;
+  justify-content: center;
+  background-color: #5AD3D8;
+  color: #fff;
+  content: "×";
+  cursor: pointer;
+  opacity: 0; 
+  animation: 1s fadeIn ease forwards .5s;
+
+}
+
+@keyframes grow {
+  100% {
+    height: 100%;
+    width: 100%;
+ }
+}
+
+@keyframes fadeIn {
+100% {
+  opacity: 1;
+ }
+}
+
+@keyframes slideUp {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
